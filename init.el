@@ -24,8 +24,10 @@
 (straight-use-package 'ivy)
 (straight-use-package 'elixir-mode)
 (straight-use-package 'lsp-mode)
+(straight-use-package 'dashboard)
+(straight-use-package 'smartparens)
 
-(load-theme 'doom-one)
+(load-theme 'doom-one t)
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
@@ -33,6 +35,8 @@
 (with-eval-after-load "company"
   (define-key company-active-map (kbd "C-p") #'company-select-previous-or-abort)
   (define-key company-active-map (kbd "C-n") #'company-select-next-or-abort))
+
+(dashboard-setup-startup-hook)
 
 (yas-global-mode 1)
 (projectile-mode +1)
@@ -45,6 +49,13 @@
 (setq company-idle-delay .1)
 (setq company-tooltip-align-annotations t)
 (setq lsp-enable-file-watchers nil)
+(setq dashboard-center-content t)
+(setq dashboard-startup-banner '2)
+(setq dashboard-items '((recents  . 5)
+                        (projects . 5)
+                        (bookmarks . 5)
+                        (agenda . 5)))
+
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'elixir-mode-hook 'lsp)
 
