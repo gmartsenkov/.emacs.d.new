@@ -3,3 +3,5 @@ auto-save-list/
 backups/
 straight/
 transient/
+eln-cache/
+.lsp-session*

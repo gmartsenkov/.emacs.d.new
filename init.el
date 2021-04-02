@@ -22,6 +22,8 @@
 (straight-use-package 'yasnippet-snippets)
 (straight-use-package 'company)
 (straight-use-package 'ivy)
+(straight-use-package 'elixir-mode)
+(straight-use-package 'lsp-mode)
 
 (load-theme 'doom-one)
 
@@ -37,11 +39,14 @@
 (ivy-mode 1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+(setq lsp-clients-elixir-server-executable "~/elixir-ls/release/language_server.sh")
 (setq projectile-completion-system 'ivy)
 (setq company-tooltip-limit 10) 
 (setq company-idle-delay .1)
 (setq company-tooltip-align-annotations t)
+(setq lsp-enable-file-watchers nil)
 (add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'elixir-mode-hook 'lsp)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
