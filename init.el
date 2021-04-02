@@ -26,12 +26,16 @@
 (straight-use-package 'lsp-mode)
 (straight-use-package 'dashboard)
 (straight-use-package 'smartparens)
+(straight-use-package 'ample-theme)
+(straight-use-package 'expand-region)
 
-(load-theme 'doom-one t)
+(load-theme 'ample-flat t)
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+(global-set-key (kbd "C-=") 'er/expand-region)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (with-eval-after-load "company"
   (define-key company-active-map (kbd "C-p") #'company-select-previous-or-abort)
   (define-key company-active-map (kbd "C-n") #'company-select-next-or-abort))
@@ -41,7 +45,7 @@
 (yas-global-mode 1)
 (projectile-mode +1)
 (ivy-mode 1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(smartparens-global-mode t)
 
 (setq lsp-clients-elixir-server-executable "~/elixir-ls/release/language_server.sh")
 (setq projectile-completion-system 'ivy)
