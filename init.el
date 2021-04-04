@@ -35,7 +35,8 @@
   (exec-path-from-shell-initialize))
 
 (global-set-key (kbd "C-=") 'er/expand-region)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(with-eval-after-load "projectile"
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 (with-eval-after-load "company"
   (define-key company-active-map (kbd "C-p") #'company-select-previous-or-abort)
   (define-key company-active-map (kbd "C-n") #'company-select-next-or-abort))
@@ -45,9 +46,12 @@
 (yas-global-mode 1)
 (projectile-mode +1)
 (ivy-mode 1)
+(smartparens-global-strict-mode t)
 (smartparens-global-mode t)
+(show-smartparens-global-mode t)
 
-(setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+(setq sp-base-key-bindings 'sp)
+(setq magit-=display-buffer-function 'magit-display-buffer-fullframe-status-v1)
 (setq lsp-clients-elixir-server-executable "~/elixir-ls/release/language_server.sh")
 (setq projectile-completion-system 'ivy)
 (setq company-tooltip-limit 10) 
@@ -77,3 +81,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(load-file "~/.emacs.d/keys.el")
