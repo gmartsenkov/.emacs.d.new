@@ -22,6 +22,8 @@
 (straight-use-package 'yasnippet-snippets)
 (straight-use-package 'company)
 (straight-use-package 'ivy)
+(straight-use-package 'prescient)
+(straight-use-package 'ivy-prescient)
 (straight-use-package 'elixir-mode)
 (straight-use-package 'lsp-mode)
 (straight-use-package 'dashboard)
@@ -49,6 +51,7 @@
 (smartparens-global-strict-mode t)
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
+(ivy-prescient-mode t)
 
 (setq sp-base-key-bindings 'sp)
 (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
