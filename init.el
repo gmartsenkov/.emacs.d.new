@@ -51,7 +51,7 @@
 (show-smartparens-global-mode t)
 
 (setq sp-base-key-bindings 'sp)
-(setq magit-=display-buffer-function 'magit-display-buffer-fullframe-status-v1)
+(setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
 (setq lsp-clients-elixir-server-executable "~/elixir-ls/release/language_server.sh")
 (setq projectile-completion-system 'ivy)
 (setq company-tooltip-limit 10) 
