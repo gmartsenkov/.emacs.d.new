@@ -5,5 +5,4 @@ straight/
 transient/
 eln-cache/
 .lsp-session*
-keys.el
 recentf
