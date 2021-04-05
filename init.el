@@ -32,12 +32,19 @@
 (straight-use-package 'expand-region)
 (straight-use-package 'git-gutter)
 (straight-use-package 'anzu)
+(straight-use-package 'crux)
 
 (setq doom-gruvbox-dark-variant "soft")
 (load-theme 'doom-gruvbox t)
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
+
+(global-set-key (kbd "C-c D") 'crux-delete-file-and-buffer)
+(global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
+(global-set-key (kbd "s-k") 'crux-kill-whole-line)
+(global-set-key (kbd "C-c k") 'crux-kill-other-buffers)
+(global-set-key (kbd "C-c f") 'crux-recentf-find-file)
 
 (global-set-key (kbd "s-.") 'anzu-query-replace-regexp)
 (global-set-key (kbd "C-=") 'er/expand-region)
