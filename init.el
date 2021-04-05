@@ -52,6 +52,7 @@
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 (ivy-prescient-mode t)
+(global-linum-mode t)
 
 (setq sp-base-key-bindings 'sp)
 (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
