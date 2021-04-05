@@ -54,9 +54,9 @@
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 (ivy-prescient-mode t)
+(prescient-persist-mode t)
 (global-git-gutter-mode +1)
 
-(setq prescient-persist-mode t)
 (setq prescient-save-file "~/.emacs.d/.ivy-prescient")
 (setq sp-base-key-bindings 'sp)
 (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
