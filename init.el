@@ -30,6 +30,7 @@
 (straight-use-package 'smartparens)
 (straight-use-package 'ample-theme)
 (straight-use-package 'expand-region)
+(straight-use-package 'git-gutter)
 
 (setq doom-gruvbox-dark-variant "soft")
 (load-theme 'doom-gruvbox t)
@@ -53,8 +54,10 @@
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 (ivy-prescient-mode t)
-(global-linum-mode t)
+(global-git-gutter-mode +1)
 
+(setq prescient-persist-mode t)
+(setq prescient-save-file "~/.emacs.d/.ivy-prescient")
 (setq sp-base-key-bindings 'sp)
 (setq magit-display-buffer-function 'magit-display-buffer-fullframe-status-v1)
 (setq lsp-clients-elixir-server-executable "~/elixir-ls/release/language_server.sh")
