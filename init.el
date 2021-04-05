@@ -31,6 +31,7 @@
 (straight-use-package 'ample-theme)
 (straight-use-package 'expand-region)
 (straight-use-package 'git-gutter)
+(straight-use-package 'anzu)
 
 (setq doom-gruvbox-dark-variant "soft")
 (load-theme 'doom-gruvbox t)
@@ -38,6 +39,7 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+(global-set-key (kbd "s-.") 'anzu-query-replace-regexp)
 (global-set-key (kbd "C-=") 'er/expand-region)
 (with-eval-after-load "projectile"
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
@@ -47,15 +49,16 @@
 
 (dashboard-setup-startup-hook)
 
-(yas-global-mode 1)
-(projectile-mode +1)
-(ivy-mode 1)
+(global-anzu-mode t)
+(yas-global-mode t)
+(projectile-mode t)
+(ivy-mode t)
 (smartparens-global-strict-mode t)
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 (ivy-prescient-mode t)
 (prescient-persist-mode t)
-(global-git-gutter-mode +1)
+(global-git-gutter-mode t)
 
 (setq prescient-save-file "~/.emacs.d/.ivy-prescient")
 (setq sp-base-key-bindings 'sp)
