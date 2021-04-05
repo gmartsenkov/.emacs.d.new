@@ -31,7 +31,8 @@
 (straight-use-package 'ample-theme)
 (straight-use-package 'expand-region)
 
-(load-theme 'ample-flat t)
+(setq doom-gruvbox-dark-variant "soft")
+(load-theme 'doom-gruvbox t)
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
