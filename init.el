@@ -33,6 +33,7 @@
 (straight-use-package 'git-gutter)
 (straight-use-package 'anzu)
 (straight-use-package 'crux)
+(straight-use-package 'ace-window)
 
 (setq doom-gruvbox-dark-variant "soft")
 (load-theme 'doom-gruvbox t)
@@ -41,6 +42,7 @@
   (exec-path-from-shell-initialize))
 
 (global-set-key (kbd "C-c D") 'crux-delete-file-and-buffer)
+(global-set-key (kbd "s-w") 'ace-window)
 (global-set-key (kbd "C-c d") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "s-k") 'crux-kill-whole-line)
 (global-set-key (kbd "C-c k") 'crux-kill-other-buffers)
