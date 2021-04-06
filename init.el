@@ -13,6 +13,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-use-package 'ag)
 (straight-use-package 'doom-themes)
 (straight-use-package 'projectile)
 (straight-use-package 'cider)
