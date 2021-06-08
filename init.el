@@ -13,8 +13,13 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(setq evil-want-keybinding nil)
+
 (straight-use-package 'ag)
+(straight-use-package 'evil)
 (straight-use-package 'doom-themes)
+(straight-use-package 'doom-modeline)
+(straight-use-package 'evil-collection)
 (straight-use-package 'projectile)
 (straight-use-package 'cider)
 (straight-use-package 'exec-path-from-shell)
@@ -59,14 +64,17 @@
 
 (dashboard-setup-startup-hook)
 
+(evil-mode t)
+(evil-collection-init)
+(evil-collection-ivy-setup)
 (global-anzu-mode t)
 (yas-global-mode t)
 (projectile-mode t)
 (ivy-mode t)
-(smartparens-global-strict-mode t)
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 (ivy-prescient-mode t)
+(doom-modeline-mode t)
 (prescient-persist-mode t)
 (global-git-gutter-mode t)
 
